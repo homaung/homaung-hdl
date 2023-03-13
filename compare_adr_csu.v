@@ -1,3 +1,4 @@
+
 module compare_adr_csu(
                data1,
                data2,
@@ -9,7 +10,7 @@ module compare_adr_csu(
                q4,
                q5,
                same             
-    );
+);
     
     
 input wire [4:0] data1; // 검색 시작 주소1 레지스터 입력
@@ -30,10 +31,10 @@ input  wire select1;    //레지스터 1 select
 input  wire select2;    //레지스터 2 select
 
 
-register utt1(.data(data1), .reset(reset1),.q(q1), .select(select1), .clk(clk)); //레지스터 1
-register utt2(.data(data2), .reset(reset2),.q(q2), .select(select2), .clk(clk)); //레지스터 2
-mux_1 utt3 (.a(q1), .b(q2), .sel(q3), .out(q4));                                 //mux1 순서 조정용
-mux_1 utt4 (.a(q2), .b(q1), .sel(q3), .out(q5));                                 //mux2 순서 조정용
+register utt5(.data(data1), .reset(reset1),.q(q1), .select(select1), .clk(clk)); //레지스터 1
+register utt6(.data(data2), .reset(reset2),.q(q2), .select(select2), .clk(clk)); //레지스터 2
+mux_1 utt7 (.a(q1), .b(q2), .sel(q3), .out(q4));                                 //mux1 순서 조정용
+mux_1 utt8 (.a(q2), .b(q1), .sel(q3), .out(q5));                                 //mux2 순서 조정용
 
 
 
@@ -61,3 +62,5 @@ always @ (q1,q2)        //만약 두 주소 코드의 hamming distant가 0일경
 
 
 endmodule
+
+
