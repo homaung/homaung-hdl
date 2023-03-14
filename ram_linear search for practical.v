@@ -3,22 +3,26 @@ module spreg(
     ce          ,
     we          ,
     addr        ,
-    data           ,
+    data        ,
     q   
 );
+
+parameter A=8,  D=8, R=256; // A : Adress width    D : Data width    R : 2^A
+
 // input & output
 input                   clk         ;
 input                   ce          ;
 input                   we          ; 
-input       [      7:0] addr        ;
-input       [      2:0] data        ;
-output      [      2:0] q           ;
+input       [      A-1:0] addr        ;
+input       [      D-1:0] data        ;
+output      [      D-1:0] q           ;
 
 // wire & regs
-reg         [      2:0]  mem[0:7]  ;
-reg         [      7:0]  r_addr     ;
+reg         [      A-1:0]  mem[0:R-1]  ;
+reg         [      A-1:0]  r_addr     ;
 
 
+//logic
 always @ (posedge clk)
 begin
     if (ce)  begin
@@ -31,5 +35,6 @@ begin
 end
 
 assign q = mem[r_addr];
+
 
 endmodule
