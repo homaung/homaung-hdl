@@ -1,4 +1,4 @@
-module mux_1to8_ls (a,
+module mux_1to1_ls (a,
                     b,
                     sel,
                     out
@@ -6,7 +6,7 @@ module mux_1to8_ls (a,
     );
 
 //Parameter
-parameter A=8, D=8;    // A : Adress width    D : Data width 
+parameter A=1, D=8;    // A : Adress width    D : Data width 
 
 
 

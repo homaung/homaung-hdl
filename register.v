@@ -7,7 +7,7 @@ module register ( data,
 
 
 //Parameter
-parameter A=8,  D=8, R=256; // A : Adress width    D : Data width    R : 2^A
+parameter A=8, D=8;     // A : Adress width    D : Data width  
 
 //wire&reg
 input wire [D-1:0] data;
@@ -24,7 +24,7 @@ reg [D-1:0] ns;
 always @ (posedge clk, negedge reset)
     begin
         if (!reset)
-            q <= 4'b0000;
+            q <= 7'b00000000;
         else
             q <= ns;
     end
@@ -39,4 +39,3 @@ always @ (select)
     end
 
 endmodule
-

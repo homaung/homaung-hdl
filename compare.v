@@ -1,4 +1,4 @@
-module compare(data1,
+module search (data1,
                data2,
                reset1,
                reset2,
@@ -11,7 +11,7 @@ module compare(data1,
                
 
 //Parameter
-parameter A=8,  D=8, R=256; // A : Adress width    D : Data width    R : 2^A
+parameter A=8,  D=8;    // A : Adress width    D : Data width    
 
 //wire&reg
 input wire [D-1:0] data1;
@@ -32,9 +32,9 @@ input wire select2;
 
 
 
-//instant
-register utt5(.data(data1), .reset(reset1),.q(q1), .select(select1), .clk(clk));
-register utt6(.data(data2), .reset(reset2),.q(q2), .select(select2), .clk(clk)); 
+//Instance
+register_8bits search_reg1(.data(data1), .reset(reset1),.q(q1), .select(select1), .clk(clk));
+register_8bits search_reg2(.data(data2), .reset(reset2),.q(q2), .select(select2), .clk(clk)); 
 
 
 
@@ -53,3 +53,4 @@ assign q5 = q3;
 
  
 endmodule
+
