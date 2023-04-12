@@ -1,9 +1,10 @@
-module register ( data,
-                  reset,
-                  q,
-                  select,
-                  clk
-    );
+module register_8bits( 
+                data,
+                reset,
+                q,
+                select,
+                clk
+);
 
 
 //Parameter

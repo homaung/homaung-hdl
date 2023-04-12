@@ -1,4 +1,4 @@
-module memory_ad(
+module memory_data(
     clk         ,
     ce          ,
     we          ,
@@ -8,7 +8,7 @@ module memory_ad(
 );
 
 //parameter
-parameter A=8, D=8, R=256; // A : Adress width    D : Data width    R : 2^A
+parameter A=7, D=8, R=128;                    // A : Adress width    D : Data width    R : 2^A
 
 //input & output
 input                   clk           ;
@@ -22,6 +22,7 @@ output      [      D-1:0] q           ;
 reg         [      D-1:0]  mem[R-1:0] ;
 reg         [      A-1:0]  r_addr     ;
 reg                        zero       ;
+
 
 //logic
 always @ (posedge clk)
